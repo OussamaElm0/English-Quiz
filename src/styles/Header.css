@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+:root {
+    --orange: #EE9322;
+    --font: 'Tilt Neon', sans-serif;
+    --textBtn: #fff;
+    --white: #fff;
+}
+.navbar {
+    height: 60px; 
+}
+.nav-link {
+    font-size: large;
+    font-family: var(--font);
+}
+.nav-item {
+    margin: 0;
+}
+.nav-link {
+    color: var(--orange);    
+    text-decoration: none;
+    padding: 10px 20px;
+    position: relative;
+}
+.nav-link::before,
+.nav-link::after,
+.btn::after,
+.btn::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--orange);
+    transition: width 0.5s ease;
+}
+.nav-link::before,
+.btn::before {
+    bottom: 0;
+    left: 0;
+}
+.nav-link::after,
+.btn::after {
+    bottom: 0;
+    right: 0;
+}
+.nav-link:hover::before,
+.nav-link:hover::after,
+.btn:hover::after,
+.btn:hover::before {
+    width: 50%;
+}
+.btn {
+    color: var(--orange);
+    font-family: var(--font);
+}
+.btn:hover {
+    background-color: var(--orange);
+    color: var(--textBtn);
+}
+@media (max-width: 991px) {
+    .navbar {
+        height: fit-content;
+    }
+}
