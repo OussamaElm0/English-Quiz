@@ -2,7 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 
-export default function Header() {
+export default function Header(props) {
+  const {search, changeValue} = props
+
+  const handleClick = (e) => {
+    e.preventDefault(e)
+    changeValue(search)
+  }
+  const handleChange = (e) => {
+    const {target: {value}} = e
+    changeValue(value)
+  }
+
   return (
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary ">
@@ -45,8 +56,10 @@ export default function Header() {
                 type="search"
                 placeholder="Search Test"
                 aria-label="Search"
+                value={search}
+                onChange={(e) => handleChange(e)}
               />
-              <button class="btn" type="submit">
+              <button class="btn" type="submit" onClick={(e) => handleClick(e)}>
                 Search
               </button>
             </form>

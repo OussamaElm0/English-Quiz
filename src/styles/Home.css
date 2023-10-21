@@ -17,10 +17,13 @@
 .play {
     align-self: flex-end;
 }
-.btn {
+.btn-quiz {
     color: var(--white);
 }
-.btn:hover {
+.btn-quiz:hover {
     background: var(--white);
     color: var(--orange);
+}
+.play-icon {
+    font-size: larger;
 }

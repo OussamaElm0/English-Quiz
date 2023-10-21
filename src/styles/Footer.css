@@ -4,7 +4,7 @@ footer {
     grid-template-rows: auto;
     font-family: var(--font);
     color: var(--orange);
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: fit-content;

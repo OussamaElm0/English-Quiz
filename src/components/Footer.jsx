@@ -9,9 +9,7 @@ export default function Footer() {
     var whatsapp = "https://wa.me/212610373853";
     var linkdin = "https://www.linkedin.com/in/oussama-el-mabrouki-81594b283/";
     var github = "https://github.com/OussamaElm0";
-
     
-
     return (
       <footer className="bg-body-tertiary">
         <div className="column column-1">
