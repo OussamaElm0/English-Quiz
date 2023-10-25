@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 
 export default function Header(props) {
-  const {search, changeValue} = props
+  const {numberTest, changeValue} = props
+  const [num, setNum] = useState(0)
 
   const handleClick = (e) => {
     e.preventDefault(e)
-    changeValue(search)
+    changeValue(num)
   }
   const handleChange = (e) => {
     const {target: {value}} = e
-    changeValue(value)
+    setNum(value)
   }
 
   return (
@@ -53,11 +54,10 @@ export default function Header(props) {
             <form class="d-flex" role="search">
               <input
                 class="form-control me-2"
-                type="search"
-                placeholder="Search Test"
-                aria-label="Search"
-                value={search}
+                type="number"
+                value={num}
                 onChange={(e) => handleChange(e)}
+                min={0}
               />
               <button class="btn" type="submit" onClick={(e) => handleClick(e)}>
                 Search

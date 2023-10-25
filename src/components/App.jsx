@@ -7,21 +7,18 @@ import Footer from './Footer';
 import About from '../pages/About';
 import Home from "../pages/Home";
 import NotFound from '../pages/NotFound';
-import TestPage from '../pages/TestPage';
 
 export default function App() {
-  const [searchValue, setSearchValue] = useState('')
-
+  const [numberTest, setNumberTest] = useState(0)
 
   return (
     <BrowserRouter>
-      <Header search={searchValue} changeValue={setSearchValue} />
+      <Header numberTest={numberTest} changeValue={setNumberTest} />
       <Routes>
-        <Route path='/'>
-          <Route index element={<Home />} />
+        <Route path="/">
+          <Route index element={<Home numberQuestions={numberTest} />} />
           <Route path="about" element={<About />} />
-          <Route path="test/:id" element={<TestPage />} />
-          <Route path='*' element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
       <Footer />

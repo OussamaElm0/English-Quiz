@@ -1,21 +1,44 @@
-import React from 'react'
-import { CiPlay1 } from "react-icons/ci";
-import { Link, useParams } from 'react-router-dom';
+import React, { useState } from 'react'
 
 export default function Test(props) {
-    const {title, nbrOfQuestions, handleClick} = props
-  
-    
+    const {id, question, answers, rightAnswerId, updateScore, onNext} = props
+    const [answerSelected, setAnswerSelected] = useState("")
+
+    const handleClick = e => {
+      const {target: {value}} = e
+      setAnswerSelected(value)
+    }
+    const valideAnswer = () => {
+      updateScore( prev => {
+        return rightAnswerId === answerSelected ? prev + 1 : prev
+      })
+      onNext(prev => prev + 1)
+    }
+
     return (
       <>
         <div className="test">
-          <h2>{title}</h2>
-          <p>{nbrOfQuestions} questions</p>
-          <div className='play'>
-            <Link className="btn btn-quiz" to="test/2" >
-              <CiPlay1 className='play-icon' />
-            </Link>
+          <h1>{question}</h1>
+          <div className="answers">
+            {answers.map((a) => {
+              return (
+                <button
+                  key={a.idA}
+                  className="btn btn-quiz"
+                  onClick={(e) => handleClick(e)}
+                  value={a.idA}
+                >
+                  {a.answer}
+                </button>
+              );
+            })}
           </div>
+          <button 
+            className="btn btn-next" 
+            onClick={valideAnswer}
+          >
+            Next
+          </button>
         </div>
       </>
     );
