@@ -3,58 +3,55 @@ import axios from 'axios';
 import Test from './Test';
 
 export default function Tests(props) {
-    const {nbrQst} = props
+    const { nbrQst, handleScore, resetNumQst } = props;
     const [questions, setQuestions] = useState([])
-    const [score, setScore] = useState(0)
-    // const [currentQuestion, setCurrentQuestion] = useState(questions[questionIndex])
-    const [questionIndex, setIndex] = useState(0)
     const [nextQuestion, setNextQuestion] = useState(false);
     const API_URL = "http://localhost:4000/test?nbrQst=";
-
-    const handleClick = () => {
-        setIndex(prev => prev + 1)
-    }
 
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
                 const result = await axios.get(`${API_URL}${nbrQst}`);
                 setQuestions(result.data)
+                console.log(result.data);
             } catch (e) {
                 console.log(`Cannot make request: ${e.message}`);
             }
         }
         fetchQuestions();
+        console.log(nbrQst);
         return () => {
             setQuestions([]);
+            setNextQuestion(false)
         }
     },[nbrQst])
-
     useEffect(() => {
-        console.log(score);
-    },[score])
+      handleScore(0)
+    },[])
    
     return (
-        <>
-            <div className='questions'>
-                {questions.map((qst, index) => {
-                    const {id, question, answers, rightAnswerId} = qst
-                    return (
-                      <div style={{display: nextQuestion == index ? "block" : "none" }}>
-                        <Test
-                          id={id}
-                          question={question}
-                          answers={answers}
-                          rightAnswerId={rightAnswerId}
-                          key={id}
-                          updateScore={setScore}
-                          onNext={setNextQuestion}
-                        />
-                      </div>
-                    );
-                })}
-                
-            </div>
-        </>
-    )
+      <>
+        <div className="questions">
+          {questions.map((qst, index) => {
+            const { id, question, answers, rightAnswerId } = qst;
+            return (
+              <div
+                style={{ display: nextQuestion == index ? "block" : "none" }}
+                key={id}
+              >
+                <Test
+                  question={question}
+                  answers={answers}
+                  rightAnswerId={rightAnswerId}
+                  key={id}
+                  updateScore={handleScore}
+                  onNext={setNextQuestion}
+                  reset={resetNumQst}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </>
+    );
 }

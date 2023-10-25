@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 
 export default function Test(props) {
-    const {id, question, answers, rightAnswerId, updateScore, onNext} = props
+    const { question, answers, rightAnswerId, updateScore, onNext} = props
     const [answerSelected, setAnswerSelected] = useState("")
+    const [isClicked, setClicked] = useState(null)
 
     const handleClick = e => {
       const {target: {value}} = e
       setAnswerSelected(value)
+      setClicked(value)
     }
     const valideAnswer = () => {
       updateScore( prev => {
+        console.log(prev);
         return rightAnswerId === answerSelected ? prev + 1 : prev
       })
       onNext(prev => prev + 1)
@@ -27,6 +30,7 @@ export default function Test(props) {
                   className="btn btn-quiz"
                   onClick={(e) => handleClick(e)}
                   value={a.idA}
+                  disabled={a.idA === isClicked ? true : false}
                 >
                   {a.answer}
                 </button>

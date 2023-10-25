@@ -24,8 +24,8 @@
 }
 .nav-link::before,
 .nav-link::after,
-.btn::after,
-.btn::before {
+.btn-search::after,
+.btn-search::before {
     content: "";
     position: absolute;
     width: 0;
@@ -34,26 +34,26 @@
     transition: width 0.5s ease;
 }
 .nav-link::before,
-.btn::before {
+.btn-search::before {
     bottom: 0;
     left: 0;
 }
 .nav-link::after,
-.btn::after {
+.btn-search::after {
     bottom: 0;
     right: 0;
 }
 .nav-link:hover::before,
 .nav-link:hover::after,
-.btn:hover::after,
-.btn:hover::before {
+.btn-search:hover::after,
+.btn-search:hover::before {
     width: 50%;
 }
-.btn {
+.btn-search {
     color: var(--orange);
     font-family: var(--font);
 }
-.btn:hover {
+.btn-search:hover {
     background-color: var(--orange);
     color: var(--textBtn);
 }
