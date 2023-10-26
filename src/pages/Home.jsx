@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Tests from '../components/Tests'
 import "../styles/Home.css"
 import Score from '../components/Score'
+import { NumberQuestionsContext } from '../components/App'
 
 export default function Home(props) {
-  const { numberQuestions, resetNumberTest } = props;
+  const { resetNumberTest } = props;
   const [score, setScore] = useState(null)
+  const numberQuestions = useContext(NumberQuestionsContext)
   
   return (
     <div className="home-container">
