@@ -1,33 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import Test from './Test';
+import { Score } from './App';
 
 export default function Tests(props) {
-    const { nbrQst, handleScore, resetNumQst } = props;
+    const { nbrQst,  resetNumQst } = props;
+    const score = useContext(Score);
     const [questions, setQuestions] = useState([])
-    const [nextQuestion, setNextQuestion] = useState(false);
+    const [nextQuestion, setNextQuestion] = useState(0);
     const API_URL = "http://localhost:4000/test?nbrQst=";
-
+    const [countScore, setCountScore] = useState(score);
+    const [pourcentage, setPourcentage] = useState(0)
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
                 const result = await axios.get(`${API_URL}${nbrQst}`);
                 setQuestions(result.data)
-                console.log(result.data);
             } catch (e) {
                 console.log(`Cannot make request: ${e.message}`);
             }
         }
         fetchQuestions();
-        console.log(nbrQst);
+        setCountScore(0)
         return () => {
             setQuestions([]);
             setNextQuestion(false)
         }
     },[nbrQst])
+
     useEffect(() => {
-      handleScore(0)
+      setCountScore(0)
     },[])
+
+    useEffect(() => {
+      setPourcentage(Math.round((countScore / nbrQst) * 100));
+    },[nextQuestion])
+
    
     return (
       <>
@@ -38,13 +46,14 @@ export default function Tests(props) {
               <div
                 style={{ display: nextQuestion == index ? "block" : "none" }}
                 key={id}
+                className="question-div"
               >
                 <Test
                   question={question}
                   answers={answers}
                   rightAnswerId={rightAnswerId}
                   key={id}
-                  updateScore={handleScore}
+                  updateScore={setCountScore}
                   onNext={setNextQuestion}
                   reset={resetNumQst}
                 />
@@ -52,6 +61,9 @@ export default function Tests(props) {
             );
           })}
         </div>
+        <p className={`score ${pourcentage < 50 ? "not-valide" : "valide"}`}>
+          Your score is: {countScore}/{nbrQst}{" "} ({pourcentage}%)
+        </p>
       </>
     );
 }

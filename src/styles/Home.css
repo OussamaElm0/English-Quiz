@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,500&display=swap');
+
 .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -34,13 +36,15 @@
 }
 .questions {
     position: relative;
-    height: 25rem;
+    height: 20rem;
+    padding: 10px;
+    width: 100%;
 }
 .btn-next {
     position: relative;
     bottom: 0;
-    left: 43%;
-    width: 10%;
+    align-self: center;
+    width: fit-content;
     background-color: #38E54D;
     color: var(--white);
     margin: 15px;
@@ -50,4 +54,29 @@
 .btn-next:hover {
     color: #38E54D;
     background-color: var(--white);
+}
+.score {
+    font-family: var(--scoreFont);
+    font-size: 40px;
+}
+.title {
+    color: #00A9FF;
+    font-size: 50px;
+    font-family: var(--font)
+}
+.valide {
+    color: #38E54D;
+}
+.not-valide {
+    color: red;
+}
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+}
+@media (max-width: 450px) {
+    
 }

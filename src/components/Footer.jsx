@@ -4,7 +4,7 @@ import "../styles/Footer.css";
 
 export default function Footer() {
     var currentDate = new Date().getFullYear();
-    var mail = "oussama.elmabrouki0@gmail.com";
+    var mail = "mailto:oussama.elmabrouki0@gmail.com";
     var phone = "+212610373853";
     var whatsapp = "https://wa.me/212610373853";
     var linkdin = "https://www.linkedin.com/in/oussama-el-mabrouki-81594b283/";

@@ -12,7 +12,6 @@ export default function Test(props) {
     }
     const valideAnswer = () => {
       updateScore( prev => {
-        console.log(prev);
         return rightAnswerId === answerSelected ? prev + 1 : prev
       })
       onNext(prev => prev + 1)

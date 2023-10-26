@@ -5,6 +5,7 @@
     --font: 'Tilt Neon', sans-serif;
     --textBtn: #fff;
     --white: #fff;
+    --scoreFont: 'Nunito', sans-serif;
 }
 .navbar {
     height: 60px; 

@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import "../styles/Header.css";
 
 export default function Header(props) {
-  const { changeValue} = props
+  const { changeValue, initScore } = props
   const [num, setNum] = useState(0)
 
   const handleClick = (e) => {
     e.preventDefault(e)
     changeValue(num)
     setNum(0)
+    initScore(0)
   }
   const handleChange = (e) => {
     const {target: {value}} = e
