@@ -16,7 +16,7 @@ export default function Test(props) {
         return rightAnswerId === answerSelected ? prev + 1 : prev
       })
       onNext(prev => prev + 1)
-    }
+    } 
 
     return (
       <>
