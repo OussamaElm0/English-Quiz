@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import About from "../pages/About";
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
+import Contact from "../pages/Contact";
 
 export const NumberQuestionsContext = createContext();
 export const Score = createContext()
@@ -23,6 +24,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home numberQuestions={numberTest} />} />
             <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

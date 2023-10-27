@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,500&display=swap');
 
+:root {
+    --titles: #00A9FF;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -61,7 +65,7 @@
     bottom: 25%;
 }
 .title {
-    color: #00A9FF;
+    color: var(--titles);
     font-size: 50px;
     font-family: var(--font)
 }
@@ -95,7 +99,8 @@
     .test {
         height: 40% ;   
     }
-}@media (max-width: 768px) {
+}
+@media (max-width: 768px) {
     .container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -113,5 +118,10 @@
     }
     .test-question {
         font-size: large;
+    }
+    .btn-next {
+        font-size: small;
+        margin: auto;
+        margin-top: 10px;
     }
 }

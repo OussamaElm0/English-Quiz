@@ -8,12 +8,16 @@
     padding: 10px;
 }
 h3 {
-    color: #1AACAC;
+    color: var(--titles);
     font-weight: bold;
 }
 .description {
     font-size: large;
     font-weight: bold;
+}
+.link {
+    text-decoration: none;
+    color: var(--orange);
 }
 @media (max-width: 750px) {
     .about-section {
