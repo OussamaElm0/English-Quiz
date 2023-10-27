@@ -15,3 +15,12 @@ h3 {
     font-size: large;
     font-weight: bold;
 }
+@media (max-width: 750px) {
+    .about-section {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr );
+    }
+}
+footer {
+    position: relative;
+}
