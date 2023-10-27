@@ -20,7 +20,7 @@ h3 {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, 1fr );
     }
-}
-footer {
-    position: relative;
+    footer {
+        position: relative;
+    }
 }
