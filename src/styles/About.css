@@ -1,0 +1,17 @@
+.about-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+}
+.about-app {
+    grid-column: span 1;
+    padding: 10px;
+}
+h3 {
+    color: #1AACAC;
+    font-weight: bold;
+}
+.description {
+    font-size: large;
+    font-weight: bold;
+}

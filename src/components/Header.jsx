@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { VscSearch } from "react-icons/vsc";
 import "../styles/Header.css";
 
 export default function Header(props) {
@@ -62,7 +63,7 @@ export default function Header(props) {
                 min={0}
               />
               <button className="btn btn-search" type="submit" onClick={(e) => handleClick(e)}>
-                Search
+                <VscSearch />
               </button>
             </form>
           </div>
