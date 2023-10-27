@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import Test from './Test';
 import { Score } from './App';
+import { motion } from "framer-motion";
 
 export default function Tests(props) {
     const { nbrQst,  resetNumQst } = props;
@@ -11,6 +12,7 @@ export default function Tests(props) {
     const API_URL = "http://localhost:4000/test?nbrQst=";
     const [countScore, setCountScore] = useState(score);
     const [pourcentage, setPourcentage] = useState(0)
+    
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
@@ -39,7 +41,13 @@ export default function Tests(props) {
    
     return (
       <>
-        <div className="questions">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5 }}
+          className="questions"
+        >
           {questions.map((qst, index) => {
             const { id, question, answers, rightAnswerId } = qst;
             return (
@@ -56,13 +64,14 @@ export default function Tests(props) {
                   updateScore={setCountScore}
                   onNext={setNextQuestion}
                   reset={resetNumQst}
+                  id={index + 1}
                 />
               </div>
             );
           })}
-        </div>
+        </motion.div>
         <p className={`score ${pourcentage < 50 ? "not-valide" : "valide"}`}>
-          Your score is: {countScore}/{nbrQst}{" "} ({pourcentage}%)
+          Your score is: {countScore}/{nbrQst} ({pourcentage}%)
         </p>
       </>
     );

@@ -20,7 +20,7 @@ export default function Test(props) {
     return (
       <>
         <div className="test">
-          <h1>{question}</h1>
+          <h1 className="test-question">{question}</h1>
           <div className="answers">
             {answers.map((a) => {
               return (
@@ -36,12 +36,10 @@ export default function Test(props) {
               );
             })}
           </div>
-          <button 
-            className="btn btn-next" 
-            onClick={valideAnswer}
-          >
+          <button className="btn btn-next" onClick={valideAnswer}>
             Next
           </button>
+          <h4 className='question-num text-dark'>{props.id}</h4>
         </div>
       </>
     );

@@ -4,10 +4,13 @@ footer {
     grid-template-rows: auto;
     font-family: var(--font);
     color: var(--orange);
-    position: absolute;
     bottom: 0;
     width: 100%;
     height: fit-content;
+    position: fixed;
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
 }
 .column {
     grid-column: span 1;
