@@ -88,6 +88,10 @@
     bottom: 0;
     right: 10px;
 }
+.dark-app {
+    background-color: var(--darkMain);
+    height: 100rem;
+}
 @media (max-width: 450px) {
     .score {
         font-size: 30px;

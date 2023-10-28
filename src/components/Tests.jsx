@@ -54,7 +54,6 @@ export default function Tests(props) {
               <div
                 style={{ display: nextQuestion == index ? "block" : "none" }}
                 key={id}
-                className="question-div"
               >
                 <Test
                   question={question}

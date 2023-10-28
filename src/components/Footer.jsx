@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/Footer.css";
+import { Mode } from './App';
 
 export default function Footer() {
     var currentDate = new Date().getFullYear();
@@ -9,9 +10,10 @@ export default function Footer() {
     var whatsapp = "https://wa.me/212610373853";
     var linkdin = "https://www.linkedin.com/in/oussama-el-mabrouki-81594b283/";
     var github = "https://github.com/OussamaElm0";
+    const mode = useContext(Mode)
     
     return (
-      <footer className="bg-body-tertiary">
+      <footer className={`${mode ? "dark-bar" : "bg-body-tertiary"}`}>
         <div className="column column-1">
           <img src="./assets/logo.png" width={80} alt="My Quiz Logo" />
           {String.fromCodePoint(169)} {currentDate}
@@ -19,17 +21,23 @@ export default function Footer() {
         <div className="column column-2">
           <ul>
             <li>
-              <Link to="/" className="footer-link">
+              <Link to="/" className={`${mode ? "dark-linkF" : "footer-link"}`}>
                 Home
               </Link>
             </li>
             <li>
-              <Link to="about" className="footer-link">
+              <Link
+                to="about"
+                className={`${mode ? "dark-linkF" : "footer-link"}`}
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link to="contact" className="footer-link">
+              <Link
+                to="contact"
+                className={`${mode ? "dark-linkF" : "footer-link"}`}
+              >
                 Contact Us
               </Link>
             </li>
@@ -41,28 +49,44 @@ export default function Footer() {
               <a
                 href={`mailto:${mail}`}
                 target="_blank"
-                className="footer-link"
+                className={`${mode ? "dark-linkF" : "footer-link"}`}
               >
                 Email
               </a>
             </li>
             <li>
-              <a href={`tel:${phone}`} target="_blank" className="footer-link">
+              <a
+                href={`tel:${phone}`}
+                target="_blank"
+                className={`${mode ? "dark-linkF" : "footer-link"}`}
+              >
                 Phone
               </a>
             </li>
             <li>
-              <a href={whatsapp} target="_blank" className="footer-link">
+              <a
+                href={whatsapp}
+                target="_blank"
+                className={`${mode ? "dark-linkF" : "footer-link"}`}
+              >
                 Whatsapp
               </a>
             </li>
             <li>
-              <a href={linkdin} target="_blank" className="footer-link">
+              <a
+                href={linkdin}
+                target="_blank"
+                className={`${mode ? "dark-linkF" : "footer-link"}`}
+              >
                 Linkdin
               </a>
             </li>
             <li>
-              <a href={github} target="_blank" className="footer-link">
+              <a
+                href={github}
+                target="_blank"
+                className={`${mode ? "dark-linkF" : "footer-link"}`}
+              >
                 Github
               </a>
             </li>

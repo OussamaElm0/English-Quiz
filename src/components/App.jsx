@@ -11,25 +11,38 @@ import Contact from "../pages/Contact";
 
 export const NumberQuestionsContext = createContext();
 export const Score = createContext()
+export const Mode = createContext();
 
 export default function App() {
   const [numberTest, setNumberTest] = useState(0);
   const [score, setScore] = useState(0)
+  const [darkMode, setDarkMode] = useState(false)
 
   return (
-    <NumberQuestionsContext.Provider value={numberTest}>
-      <Score.Provider value={score}>
-        <BrowserRouter>
-          <Header changeValue={setNumberTest} initScore={setScore} />
-          <Routes>
-            <Route path="/" element={<Home numberQuestions={numberTest} />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </Score.Provider>
-    </NumberQuestionsContext.Provider>
+    <div className={darkMode && "dark-app"} >
+      <Mode.Provider value={darkMode}>
+        <NumberQuestionsContext.Provider value={numberTest}>
+          <Score.Provider value={score}>
+            <BrowserRouter>
+              <Header
+                handleMode={setDarkMode}
+                changeValue={setNumberTest}
+                initScore={setScore}
+              />
+              <Routes>
+                <Route
+                  path="/"
+                  element={<Home numberQuestions={numberTest} />}
+                />
+                <Route path="about" element={<About />} />
+                <Route path="contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <Footer />
+            </BrowserRouter>
+          </Score.Provider>
+        </NumberQuestionsContext.Provider>
+      </Mode.Provider>
+    </div>
   );
 }

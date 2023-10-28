@@ -33,3 +33,10 @@ ul {
 .footer-link:hover {
     color: #0F0F0F;
 }
+.dark-linkF {
+    color: var(--orange);
+    text-decoration: none;
+}
+.dark-linkF:hover {
+    color: #fff;
+}
