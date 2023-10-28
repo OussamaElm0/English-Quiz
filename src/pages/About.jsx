@@ -8,7 +8,11 @@ export default function About() {
   const constraintsRef = useRef(null);
   const github = "https://github.com/OussamaElm0";
 
-  const link = <a href={github} target="_blank" className="link" >Oussama El Mabrouki</a>
+  const link = (
+    <a href={github} rel="noreferrer" target="_blank" className="link">
+      Oussama El Mabrouki
+    </a>
+  );
 
   return (
     <>

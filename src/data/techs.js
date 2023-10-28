@@ -64,5 +64,11 @@ export  const Techs = [
     picture: "./assets/techs/mui.png",
     width: 50,
     height: 50
+  },
+  {
+    name: "Sweet Alert 2",
+    picture: "./assets/techs/sweetalert2.png",
+    width: 100,
+    height: 30
   }
 ];

@@ -18,9 +18,10 @@
     width: 70%;
 }
 .btn-submit {
-    width: 100%;
+    /* width: 100%;
     background-color: var(--orange);
-    color: var(--white);
+    color: var(--white); */
+    background-color: aqua;
 }
 .input-group {
     margin: 10px;
