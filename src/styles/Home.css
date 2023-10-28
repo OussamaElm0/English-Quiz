@@ -90,7 +90,7 @@
 }
 .dark-app {
     background-color: var(--darkMain);
-    height: 100rem;
+    height: 10rem;
 }
 @media (max-width: 450px) {
     .score {
