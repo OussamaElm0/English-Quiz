@@ -99,7 +99,7 @@ export default function Contact() {
               }}
             >
               <NavigationIcon sx={{ mr: 1 }} />
-              Navigate
+              Send
             </Fab>
           </form>
         </div>
