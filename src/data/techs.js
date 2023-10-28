@@ -59,4 +59,10 @@ export  const Techs = [
     width: 50,
     height: 50,
   },
+  {
+    name: "Material UI",
+    picture: "./assets/techs/mui.png",
+    width: 50,
+    height: 50
+  }
 ];

@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/About.css";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { Techs } from "../data/tehs";
+import { Techs } from "../data/techs";
 
 export default function About() {
   const constraintsRef = useRef(null);
