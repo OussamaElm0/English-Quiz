@@ -90,12 +90,11 @@
 }
 .dark-app {
     background-color: var(--darkMain);
-    height: 10rem;
+    height: 30rem;
 }
 @media (max-width: 450px) {
     .score {
         font-size: 30px;
-        /* margin-top: 70%; */
     }
     .title {
         font-size: 30px;
