@@ -20,6 +20,10 @@ export default function Contact() {
                 text: "Thank you for contacting us!",
                 timer:2000
             });
+            setEmail('')
+            setName('')
+            setSubject('')
+            setMessage('')
         } catch (e) {
             Swal.fire({
                 icon: "error",
