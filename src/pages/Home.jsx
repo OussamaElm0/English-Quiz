@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Tests from '../components/Tests'
 import "../styles/Home.css"
+import { NumberQuestionsContext } from '../components/App';
 
 export default function Home(props) {
-  const { numberQuestions, resetNumberTest } = props;
+  const { resetNumberTest } = props;
+  const numberQuestions = useContext(NumberQuestionsContext)
   
   return (
     <div className="home-container">
@@ -12,7 +14,6 @@ export default function Home(props) {
       ) : (
         <Tests
           resetNumQst={resetNumberTest}
-          nbrQst={numberQuestions}
         />
       )}
     </div>

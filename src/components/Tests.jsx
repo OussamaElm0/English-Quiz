@@ -3,10 +3,12 @@ import axios from 'axios';
 import Test from './Test';
 import { Score } from './App';
 import { motion } from "framer-motion";
+import { NumberQuestionsContext } from './App';
 
 export default function Tests(props) {
-    const { nbrQst,  resetNumQst } = props;
+    const { resetNumQst } = props;
     const score = useContext(Score);
+    const nbrQst = useContext(NumberQuestionsContext)
     const [questions, setQuestions] = useState([])
     const [nextQuestion, setNextQuestion] = useState(0);
     const API_URL = "http://localhost:4000/test?nbrQst=";

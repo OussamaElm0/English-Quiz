@@ -21,11 +21,11 @@ export default function About() {
           <h3>About This App</h3>
           <p className="description">
             This a simple quiz application for english, contains a hundreds of
-            questions. Built by me {link} . The idea was com
+            questions. Built by {link} . The idea was com
             after I found 25 sheets of english qcm's with anwers on my father
-            bookcase's.At this time I was in the midle of learning
+            bookcase's.At this time I was in the middle of learning
             Express.js . After I finished learning basics of this backend
-            framework and mongoose wiche is a javascript library's for mongodb
+            framework and mongoose whiche is a javascript library's for mongodb
             databases's,I start to plan for this project.And after almost 1
             month we finish it.
           </p>

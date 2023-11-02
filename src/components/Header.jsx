@@ -87,7 +87,7 @@ export default function Header(props) {
             <img src="./assets/logo.png" className="logo" width={100} />
           </Link>
           <button
-            className="navbar-toggler"
+            className={`navbar-toggler ${mode ? "bg-light" : null}`}
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -134,7 +134,9 @@ export default function Header(props) {
                 min={0}
               />
               <button
-                className={`btn btn-search ${mode ? "dark-link" : "nav-link-item"}`}
+                className={`btn btn-search ${
+                  mode ? "dark-link" : "nav-link-item"
+                }`}
                 type="submit"
                 onClick={(e) => handleClick(e)}
               >

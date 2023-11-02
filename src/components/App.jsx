@@ -32,7 +32,7 @@ export default function App() {
               <Routes>
                 <Route
                   path="/"
-                  element={<Home numberQuestions={numberTest} />}
+                  element={<Home />}
                 />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
