@@ -19,6 +19,12 @@ h3 {
     text-decoration: none;
     color: var(--orange);
 }
+.techs-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+}
 @media (max-width: 750px) {
     .about-section {
         grid-template-columns: 1fr;

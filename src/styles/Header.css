@@ -12,18 +12,17 @@
 .navbar {
     height: 60px; 
 }
-.nav-link-item {
-    font-size: large;
-    font-family: var(--font);
-}
 .nav-item {
     margin: 0;
 }
-.nav-link-item, .dark-link {
+.nav-link-item,
+.dark-link {
     color: var(--orange);    
     text-decoration: none;
     padding: 10px 20px;
     position: relative;
+    font-size: large;
+    font-family: var(--font);
 }
 .nav-link-item::before,
 .nav-link-item::after,

@@ -36,7 +36,7 @@ export default function Contact() {
 
     return (
       <>
-        <div className="contact-section">
+        <main className="contact-section">
           <h2 className="contact-title">Contact Us</h2>
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="input-group">
@@ -106,7 +106,7 @@ export default function Contact() {
               Send
             </Fab>
           </form>
-        </div>
+        </main>
       </>
     );
 }

@@ -1,27 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { VscSearch } from "react-icons/vsc";
 import "../styles/Header.css";
 import Switch from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { Mode } from "./App";
 
-export default function Header(props) {
-  const { changeValue, initScore, handleMode } = props
-  const [num, setNum] = useState(0)
+export default function Header({ handleMode }) {
   const mode = useContext(Mode)
-
-  const handleClick = (e) => {
-    e.preventDefault(e)
-    changeValue(num)
-    setNum(0)
-    initScore(0)
-  }
-  const handleChange = (e) => {
-    const {target: {value}} = e
-    setNum(value)
-  }
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -125,24 +111,6 @@ export default function Header(props) {
                 </Link>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="number"
-                value={num}
-                onChange={(e) => handleChange(e)}
-                min={0}
-              />
-              <button
-                className={`btn btn-search ${
-                  mode ? "dark-link" : "nav-link-item"
-                }`}
-                type="submit"
-                onClick={(e) => handleClick(e)}
-              >
-                <VscSearch />
-              </button>
-            </form>
           </div>
         </div>
         <FormControlLabel

@@ -19,7 +19,7 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(false)
 
   return (
-    <div className={darkMode && "dark-app"} >
+    <div className={darkMode && "dark-app"}>
       <Mode.Provider value={darkMode}>
         <NumberQuestionsContext.Provider value={numberTest}>
           <Score.Provider value={score}>
@@ -29,15 +29,19 @@ export default function App() {
                 changeValue={setNumberTest}
                 initScore={setScore}
               />
-              <Routes>
-                <Route
-                  path="/"
-                  element={<Home />}
-                />
-                <Route path="about" element={<About />} />
-                <Route path="contact" element={<Contact />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <main className="app-main">
+                <aside></aside>
+                <Routes>
+                  <Route
+                    path="/"
+                    element={<Home resetNumberTest={setNumberTest} />}
+                  />
+                  <Route path="about" element={<About />} />
+                  <Route path="contact" element={<Contact />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+                <aside></aside>
+              </main>
               <Footer />
             </BrowserRouter>
           </Score.Provider>

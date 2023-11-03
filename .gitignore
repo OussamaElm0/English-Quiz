@@ -6,6 +6,8 @@
 .pnp.js
 /src/data
 /.idea
+sonar-project.properties
+.scannerwork
 
 # testing
 /coverage

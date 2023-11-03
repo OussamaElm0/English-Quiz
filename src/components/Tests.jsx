@@ -4,6 +4,7 @@ import Test from './Test';
 import { Score } from './App';
 import { motion } from "framer-motion";
 import { NumberQuestionsContext } from './App';
+import ScoreComponent from './Score';
 
 export default function Tests(props) {
     const { resetNumQst } = props;
@@ -40,6 +41,9 @@ export default function Tests(props) {
       setPourcentage(Math.round((countScore / nbrQst) * 100));
     },[nextQuestion])
 
+    const initTests = () => {
+      resetNumQst(0)
+    }
    
     return (
       <>
@@ -71,9 +75,12 @@ export default function Tests(props) {
             );
           })}
         </motion.div>
-        <p className={`score ${pourcentage < 50 ? "not-valide" : "valide"}`}>
-          Your score is: {countScore}/{nbrQst} ({pourcentage}%)
-        </p>
+        <ScoreComponent 
+          pourcentage={pourcentage}
+          countScore={countScore}
+          nbrQst={nbrQst}
+          initTests={initTests}
+        />
       </>
     );
 }
