@@ -13,7 +13,7 @@ export default function Home(props) {
       {numberQuestions === 0 ? (
         <div className="form-container">
           <h1 className="title">Please select number of questions</h1>
-          <NumberForm set={props.resetNumberTest} />
+          <NumberForm initNumber={resetNumberTest} />
         </div>
       ) : (
         <Tests resetNumQst={resetNumberTest} />
